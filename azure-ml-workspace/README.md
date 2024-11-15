@@ -35,3 +35,9 @@ az group create --name azmlops-dev-rg --location eastus2
 az ml workspace create -n azmlopscli-ws -g azmlops-dev-rg -l eastus2
 
 ```
+
+```bash
+
+az deployment group create --name "azmlopsdeployment" --resource-group "azmlops-dev-rg" --template-file "azuredeploy.json" --parameters name="azmlops6656" environment="dev" location="eastus2"
+
+```
