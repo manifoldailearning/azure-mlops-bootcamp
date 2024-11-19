@@ -87,7 +87,40 @@ Before creating a datastore, you need to have a storage account. Here are the st
     - `<storage-account-key>`: Access key for your storage account.
 
 ```
+## Example Configuration File
 
+Create a configuration file named `blobstore.yml` with the following content:
+
+```yaml
+$schema: https://azuremlschemas.azureedge.net/latest/datastore.schema.json
+name: <datastore-name>
+description: Datastore for Azure ML
+type: <datastore-type>
+account_name: <storage-account-name>
+container_name: <container-name>
+credentials:
+    account_key: <storage-account-key>
+```
+
+Replace the placeholders with your actual values:
+- `<datastore-name>`: Name of the datastore you want to create.
+- `<datastore-type>`: Type of the datastore (e.g., `AzureBlob`, `AzureFile`).
+- `<storage-account-name>`: Name of your Azure storage account.
+- `<container-name>`: Name of the container in your storage account.
+- `<storage-account-key>`: Access key for your storage account.
+
+## Verify Datastore
+
+To verify that the datastore has been created successfully, use the following command:
+
+```sh
+az ml datastore show --name <datastore-name> --resource-group <resource-group> --workspace-name <workspace-name>
+```
+
+Replace the placeholders with your actual values:
+- `<datastore-name>`: Name of the datastore you created.
+- `<resource-group>`: Resource group of your Azure ML workspace.
+- `<workspace-name>`: Name of your Azure ML workspace.
 
 ## Additional Resources
 
