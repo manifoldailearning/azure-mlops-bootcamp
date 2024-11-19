@@ -1,0 +1,7 @@
+$schema: https://azuremlschemas.azureedge.net/latest/azureBlob.schema.json
+name: mydatastore
+type: azure_blob
+account_name: pythonsademo99823
+container_name: mycontainer
+credentials:
+    account_key: <storage-account-key>
